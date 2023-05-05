@@ -1,0 +1,114 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card card-user">
+      <div class="card-header">
+        <h3 class="card-title ta-center">Comment Section</h3>
+      </div>
+      <div class="card-body">
+        <div class="row flex-center">
+          <div class="col-md-6">
+            <form [formGroup]="commentForm" (ngSubmit)="submit(commentForm.value)">
+              <div class="row flex-center">
+                <div class="col-md-10">
+                  <div class="form-group">
+                    <textarea formControlName="inputTodo" id="comment" class="form-control height-width"
+                      placeholder="Add a comment" value=""></textarea>
+                    <!-- <input type="text" formControlName="inputTodo" id="comment" class="form-control"
+                      placeholder="Add a comment" value=""> -->
+                  </div>
+                </div>
+              </div>
+              <div class="row flex-center">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-round" [disabled]="commentForm.invalid">Add comment</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="input-group no-border">
+              <input type="text" name="search" id="search" class="form-control"
+                placeholder="Search..." [ngModel]="searchText" autocomplete="off" (ngModelChange)="searchText=$event">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <i class="nc-icon nc-zoom-split"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex-center">
+          <div *ngFor="let todo of todos | filter: searchText; let i = index;" class="todo {{(todo.completed ? 'done' : '' )}}">
+            <div class="row PB-5 flex-center flex-display">
+              <div class="col-md-8">
+                <div class="comment-border P-5 text-wrap">
+                  <span [innerHTML]="todo.content"></span>
+                </div>
+              </div>
+              <div class="flex-display direction-column PT-6">
+                <span type="button" style="background-color: transparent; border: none; color:aqua;"
+                  (click)="edit(todo)">
+                  <mat-icon>create icon</mat-icon>
+                </span>
+                <span type="button" style="background-color: transparent; border: none; color:aqua;"
+                  (click)="deleteComment(todo)">
+                  <mat-icon>delete</mat-icon>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="row">
+  <div class="col-md-8">
+    <div class="card card-user">
+      <div class="card-header">
+        <h5 class="card-title">Comment Section</h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="commentForm" (ngSubmit)="submit(commentForm.value)">
+          <div class="row">
+            <div class="col-md-10">
+              <div class="form-group">
+                <label>Add a comment</label>
+                <input type="text" formControlName="inputTodo" id="comment" class="form-control"
+                  placeholder="Add a comment" value="">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-round">Add comment</button>
+              </div>
+            </div>
+          </div>
+          </form>
+          <div class="row">
+            <div class="col-md-10 pr-1">
+              <div class="form-group">
+                <div *ngFor="let todo of todos; let i = index;"  class="todo {{(todo.completed ? 'done' : '' )}}">  
+                  <div>{{i}}  {{todo.content}}</div>  
+                  <span>  
+                  <button type="button" style="background-color: transparent; border: none; color:aqua;" (click)="edit(todo)">
+                    <mat-icon>create icon</mat-icon>
+                  </button>
+                </span>
+                  <span>
+                  <button type="button" style="background-color: transparent; border: none; color:aqua;" (click)="deleteComment(todo)">
+                    <mat-icon>Delete</mat-icon> 
+                  </button>
+                </span>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div> -->

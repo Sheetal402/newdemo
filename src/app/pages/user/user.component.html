@@ -1,0 +1,176 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card card-user">
+      <div class="card-header">
+        <h5 class="card-title">Update Student Profile</h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="updateUserForm" (ngSubmit)="submit(updateUserForm.value)" enctype="multipart/form-data">
+          <div class="row">
+            <div class="col-md-6 pr-1">
+              <div class="form-group">
+                <label>First Name*</label>
+                <input type="text" formControlName="fname" id="fname" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-6 pl-1">
+              <div class="form-group">
+                <label>Last Name*</label>
+                <input type="text" formControlName="lname" id="lname" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Address*</label>
+                <input type="text" formControlName="address" id="address" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <img class="image-style" [src]="userData.profilepic" id="img" alt="profilePic">
+                <!-- <img class="image-style" [src]="userData.profilepic.name" id="img" alt="profilePic"> -->
+                <!-- <img class="image-style" [src]="'userData.profilepic.name:image/png;base64'" id="img" alt="profilePic"> -->
+                <label class="image-button-upload display-none">Select file</label>
+                <!-- <input type="file" id="profilepic" class="form-control"
+                  onchange="onFileSelected(event)" onload="onFileSelected(event)"> -->
+                  <input type="file" (change)="onFileSelected($event)" id="profilepic" class="form-control"
+                  placeholder="Profile Picture">
+                  <button type="button" class="btn btn-success btn-round ml-15" (click)="reload()">upload</button>
+                <!-- <button class="btn btn-success" >Upload</button> -->
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 pr-1">
+              <div class="form-group">
+                <label>Contact Number*</label>
+                <input type="text" formControlName="contact" id="contact" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-6 pl-1">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address*</label>
+                <input type="email" formControlName="email" id="email" disabled class="form-control">
+              </div>
+            </div>
+          </div>
+          <!-- <div class="row">
+            <div class="col-md-6 pr-1">
+              <div class="form-group">
+                <label>Password*</label>
+                <input type="password" formControlName="password" id="password" disabled class="form-control">
+              </div>
+            </div>
+            <div class="col-md-6 pl-1">
+              <div class="form-group">
+                <label>Confirm Password*</label>
+                <input type="password" formControlName="cpassword" id="cpassword" disabled class="form-control">
+              </div>
+            </div>
+          </div> -->
+          <div class="row">
+            <div class="update ml-auto mr-auto">
+              <button type="submit" class="btn btn-primary btn-round">Update</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- <div class="row">
+  <div class="col-md-8">
+    <div class="card card-user">
+      <div class="card-header">
+        <h5 class="card-title">Edit Student Profile</h5>
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="row">
+            <div class="col-md-5 pr-1">
+              <div class="form-group">
+                <label>Company (disabled)</label>
+                <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc.">
+              </div>
+            </div>
+            <div class="col-md-3 px-1">
+              <div class="form-group">
+                <label>Username</label>
+                <input type="text" class="form-control" placeholder="Username" value="michael23">
+              </div>
+            </div>
+            <div class="col-md-4 pl-1">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" placeholder="Email">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 pr-1">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" class="form-control" placeholder="Company" value="Chet">
+              </div>
+            </div>
+            <div class="col-md-6 pl-1">
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" class="form-control" placeholder="Last Name" value="Faker">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Address</label>
+                <input type="text" class="form-control" placeholder="Home Address" value="Melbourne, Australia">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 pr-1">
+              <div class="form-group">
+                <label>City</label>
+                <input type="text" class="form-control" placeholder="City" value="Melbourne">
+              </div>
+            </div>
+            <div class="col-md-4 px-1">
+              <div class="form-group">
+                <label>Country</label>
+                <input type="text" class="form-control" placeholder="Country" value="Australia">
+              </div>
+            </div>
+            <div class="col-md-4 pl-1">
+              <div class="form-group">
+                <label>Postal Code</label>
+                <input type="number" class="form-control" placeholder="ZIP Code">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>About Me</label>
+                <textarea class="form-control textarea">Oh so, your weak rhyme You doubt I'll bother, reading into it</textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="update ml-auto mr-auto">
+              <button type="submit" class="btn btn-primary btn-round">Update Profile</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div> -->

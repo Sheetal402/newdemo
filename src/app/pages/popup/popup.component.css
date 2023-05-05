@@ -1,0 +1,12 @@
+::ng-deep .editComment > 
+    mat-dialog-container {
+        background-color:lightblue;
+        border-radius: 10px;
+    }
+    mat-dialog-content{
+        padding: 20px;
+        /* margin-left: 23px */
+    }
+    div{
+        justify-content: space-evenly;
+    }

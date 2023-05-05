@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+.header {
+    margin-right: 10px;
+}
+.button-submit {
+    width: 50px;
+}
+
+/* .editComment > mat-dialog-container {
+    background-color: bisque;
+    height: 300px;
+    border-radius: 10px;
+} */

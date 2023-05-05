@@ -1,0 +1,26 @@
+.new-style {
+    text-align: center;
+    background-color: rgb(249 171 0 / 20%);
+    width: fit-content;
+    margin: 10% auto;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.flex-center{
+      justify-content: center;
+}
+small{
+    color: red;
+}
+a{
+    font-size: 10px;
+}
+.fc-gray{
+    color: gray;
+}
+.fs-12{
+    font-size: 12px;
+}

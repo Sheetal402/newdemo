@@ -1,0 +1,11 @@
+<form [formGroup]="updateCommentForm" (ngSubmit)="onUpdate(updateCommentForm.value)">
+  <h1 mat-dialog-title>Enter new comment here!!!</h1>
+  <!-- <mat-dialog-content><input type="text" formControlName="content"></mat-dialog-content> -->
+  <mat-dialog-content><textarea type="text" formControlName="content"
+      [innerHTML]="data.content"></textarea></mat-dialog-content>
+  <!-- [innerHTML]="data.content" -->
+  <div mat-dialog-actions>
+    <button type="submit" mat-button color="primary">Update</button>
+    <button mat-button (click)="onNoClick()" color="primary">Cancel</button>
+  </div>
+</form>

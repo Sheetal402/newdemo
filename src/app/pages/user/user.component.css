@@ -1,0 +1,16 @@
+.image-style {
+    border-radius: 50%;
+    width: 100px;
+}
+.image-button-upload{
+    border-style: solid;
+    border-radius: 10px;
+    margin-left: 10px;
+    background-color: aquamarine;
+}
+.display-none{
+    display: none;
+}
+.ml-15{
+    margin-left: 15px;
+}

@@ -1,0 +1,48 @@
+.mystyle 
+    .mat-dialog-container{
+        border-radius: 10px;
+    }
+
+.ta-center {
+    text-align: center;
+}
+.pr-5{
+    padding-right: 5px;
+}
+.PB-5{
+    padding-bottom: 5px;
+}
+.flex-display {
+    display: flex
+}
+.flex-center {
+    justify-content: center;
+}
+.direction-column{
+    flex-direction: column;
+}
+.comment-border{
+    border-style: none none none solid;
+    background-color: aliceblue;
+    border-color: darkcyan;
+    height: 70px;
+}
+.MT-15 {
+    margin-top: 15px;
+}
+.P-5 {
+    padding: 5px;
+}
+.PT-6{
+    padding-top: 6px;
+}
+
+/* .text-wrap{
+    width: 100px;
+    height: 100px;
+    word-wrap: break-word;
+}
+.height-width{
+    height: 100px;
+    width: 100px;
+} */
